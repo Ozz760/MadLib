@@ -105,7 +105,14 @@ public class MadLib {
     }
 
     public void setRandomNums(String randomNums) {
-        this.randomNums = randomNums;
+        int num = Math.abs(rand.nextInt()) % 100;
+        int index = 0;
+        int[] numberHolder = new int[3];
+        while (index < numberHolder.length) {
+            numberHolder[index] = num + index;
+            index++;
+        }
+        randomNums = "not " + numberHolder[0] + ", not " + numberHolder[1] + ", but " + numberHolder[2];
     }
 
     // Print Instructions to Player
@@ -120,26 +127,32 @@ public class MadLib {
     }
 
     public void enterNoun1() {
+        System.out.println("Give me a noun!");
         setNoun1(scan.nextLine());
     }
 
     public void enterNoun2() {
+        System.out.println("Give me another noun!");
         setNoun2(scan.nextLine());
     }
 
     public void enterNoun3() {
+        System.out.println("Give me the last noun!");
         setNoun3(scan.nextLine());
     }
 
     public void enterAdjective1() {
+        System.out.println("Give me a adjective!");
         setAdjective1(scan.nextLine());
     }
 
     public void enterAdjective2() {
+        System.out.println("Give me another adjective!");
         setAdjective2(scan.nextLine());
     }
 
     public void enterAdverb() {
+        System.out.println("Now give me an adverb!");
         setAdverb(scan.nextLine());
     }
 
@@ -150,6 +163,16 @@ public class MadLib {
                "gazed at the" + getRandomNums() + " " + getAdjective2() + " fireworks shooting from the " + getNoun3() +
                ".";
        setStory(story);
+    }
+
+    public void play() {
+        enterName();
+        enterNoun1();
+        enterNoun2();
+        enterAdjective1();
+        enterAdjective2();
+        enterAdverb();
+        enterNoun3();
     }
 
     public static void main(String[] args)  {
