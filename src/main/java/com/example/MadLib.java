@@ -63,7 +63,7 @@ public class MadLib {
         return randomNums;
     }
 
-    //Setter!
+    // Setter!
     public void setScan(Scanner scan) {
         this.scan = scan;
     }
@@ -108,9 +108,39 @@ public class MadLib {
         this.randomNums = randomNums;
     }
 
+    // Print Instructions to Player
     public void printInstructions() {
         System.out.println("Welcome to the MadLibs game. If you type in " +
                 "words, we'll give you a story. Start by typing in a name.");
+    }
+
+    // Get Data from Player
+    public void enterName() {
+        setName(scan.nextLine());
+    }
+
+    public void enterNoun1() {
+        setNoun1(scan.nextLine());
+    }
+
+    public void enterNoun2() {
+        setNoun2(scan.nextLine());
+    }
+
+    public void enterNoun3() {
+        setNoun3(scan.nextLine());
+    }
+
+    public void enterAdjective1() {
+        setAdjective1(scan.nextLine());
+    }
+
+    public void enterAdjective2() {
+        setAdjective2(scan.nextLine());
+    }
+
+    public void enterAdverb() {
+        setAdverb(scan.nextLine());
     }
 
     public void putTogetherTheStory() {
