@@ -104,7 +104,7 @@ public class MadLib {
         this.adverb = adverb;
     }
 
-    public void setRandomNums(String randomNums) {
+    public void setRandomNums() {
         int num = Math.abs(rand.nextInt()) % 100;
         int index = 0;
         int[] numberHolder = new int[3];
@@ -157,11 +157,21 @@ public class MadLib {
     }
 
     public void putTogetherTheStory() {
-       String story = "Jesse and her best friend " + getName() + " went to Disney World today! " +
-       "They saw a " + getNoun1() + " in a show at the Magic Kingdom and ate a" + getAdjective1() + " feast for dinner."
-       + "The next day I ran " + getAdverb() + " to meet Micky Mouse in his " + getNoun2() + " and then that night I " +
-               "gazed at the" + getRandomNums() + " " + getAdjective2() + " fireworks shooting from the " + getNoun3() +
-               ".";
+        String story;
+        int num = Math.abs(rand.nextInt()) % 2;
+        if (num == 0) {
+            story = "Jesse and her best friend " + getName() + " went to Disney World today! " +
+                    "They saw a " + getNoun1() + " in a show at the Magic Kingdom and ate a" + getAdjective1() + " feast for dinner."
+                    + "The next day I ran " + getAdverb() + " to meet Micky Mouse in his " + getNoun2() + " and then that night I " +
+                    "gazed at the" + getRandomNums() + " " + getAdjective2() + " fireworks shooting from the " + getNoun3() +
+                    ".";
+        } else {
+            story = "Amanda and her frenemy " + getName() + " went to the zoo last summer. " +
+            "They saw a huge " + getNoun1() + " and a tiny little " + getNoun2() + ". That night they decided to climb "
+            + getAdverb() + " into the " + getNoun3() + " to get closer look. The zoo was " + getAdjective1() + " at night" +
+                    "but they didn't care... until" + getRandomNums() + " " + getAdjective2() + " apes yelled in their faces" +
+                    ", making Amanda and" + getName() + " sprint all the way back home.";
+        }
        setStory(story);
     }
 
@@ -173,11 +183,15 @@ public class MadLib {
         enterAdjective2();
         enterAdverb();
         enterNoun3();
+        setRandomNums();
+        putTogetherTheStory();
+        System.out.println(getStory());
     }
 
     public static void main(String[] args)  {
         MadLib game = new MadLib();
         game.printInstructions();
+        game.play();
 
     }
 }
