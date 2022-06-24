@@ -157,6 +157,7 @@ public class MadLib {
     }
 
     public void putTogetherTheStory() {
+        // Give a random number to the story, for the user to get a random story.
         String story;
         int num = Math.abs(rand.nextInt()) % 2;
         if (num == 0) {
@@ -176,6 +177,7 @@ public class MadLib {
     }
 
     public void play() {
+        // Called all methods to the play method.
         enterName();
         enterNoun1();
         enterNoun2();
@@ -189,6 +191,7 @@ public class MadLib {
     }
 
     public static void main(String[] args)  {
+        // Made a new instance from MadLib called game, and made game called the first instruction and the play method.
         MadLib game = new MadLib();
         game.printInstructions();
         game.play();
